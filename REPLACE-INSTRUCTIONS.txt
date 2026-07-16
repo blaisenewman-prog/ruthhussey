@@ -1,0 +1,7 @@
+Replace these three files in the existing GitHub repository:
+
+- index.html
+- styles.css
+- script.js
+
+Keep your existing artworks.js file and images folder. This preserves all paintings already added to the website.
