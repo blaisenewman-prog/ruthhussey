@@ -13,16 +13,24 @@
 
     return {
       src: work?.src || "",
-      alt: work?.alt || work?.title || "Artwork by Ruth Hussey"
+      alt: work?.alt || work?.title || "Artwork by Ruth Hussey",
+      title: work?.title || "",
+      dimensions: work?.dimensions || ""
     };
   };
 
+  const largeWorkCaptions = Array.isArray(window.LARGE_WORK_CAPTIONS)
+    ? window.LARGE_WORK_CAPTIONS
+    : [];
   const largeWorks = Array.isArray(galleryData.large) && galleryData.large.length
-    ? galleryData.large.map(normaliseWork)
+    ? galleryData.large.map((work, index) => normaliseWork({ ...work, ...largeWorkCaptions[index] }))
     : legacyWorks.map(normaliseWork);
 
+  const smallWorkCaptions = Array.isArray(window.SMALL_WORK_CAPTIONS)
+    ? window.SMALL_WORK_CAPTIONS
+    : [];
   const smallWorks = Array.isArray(galleryData.small)
-    ? galleryData.small.map(normaliseWork)
+    ? galleryData.small.map((work, index) => normaliseWork({ ...work, ...smallWorkCaptions[index] }))
     : [];
 
   const homeWork = galleryData.home
@@ -82,6 +90,28 @@
 
       button.appendChild(image);
       figure.appendChild(button);
+
+      if ((work.title || work.dimensions)) {
+        const caption = document.createElement("figcaption");
+        caption.className = "artwork-caption";
+
+        if (work.title) {
+          const title = document.createElement("span");
+          title.className = "artwork-title";
+          title.textContent = work.title;
+          caption.appendChild(title);
+        }
+
+        if (work.dimensions) {
+          const dimensions = document.createElement("span");
+          dimensions.className = "artwork-dimensions";
+          dimensions.textContent = work.dimensions;
+          caption.appendChild(dimensions);
+        }
+
+        figure.appendChild(caption);
+      }
+
       gallery.appendChild(figure);
     });
   }

@@ -198,13 +198,23 @@ button {
 }
 
 .works-grid-large {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(5rem, 8vw, 9rem) clamp(2.5rem, 5vw, 6rem);
+  grid-template-columns: 1fr;
+  gap: clamp(5rem, 8vw, 9rem);
+}
+
+.works-grid-large .artwork {
+  width: 35%;
+  justify-self: center;
 }
 
 .works-grid-small {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(4rem, 7vw, 7rem) clamp(1.8rem, 3.8vw, 4.5rem);
+}
+
+.works-grid-small .artwork {
+  width: 50%;
+  justify-self: center;
 }
 
 .artwork {
@@ -224,6 +234,26 @@ button {
 .artwork img {
   width: 100%;
   height: auto;
+}
+
+.artwork-caption {
+  padding-top: 0.65rem;
+  color: var(--text);
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  line-height: 1.45;
+}
+
+.artwork-caption span {
+  display: block;
+}
+
+.artwork-title {
+  font-style: italic;
+}
+
+.artwork-dimensions {
+  color: var(--muted);
 }
 
 .contact-main {
@@ -365,8 +395,11 @@ button {
   }
 
   .works-grid-large {
-    grid-template-columns: 1fr;
     gap: 4.5rem;
+  }
+
+  .works-grid-large .artwork {
+    width: 70%;
   }
 
   .contact-layout {
