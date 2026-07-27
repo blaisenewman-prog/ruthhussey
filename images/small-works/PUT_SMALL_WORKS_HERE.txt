@@ -1,0 +1,1 @@
+Place the selected small works in this folder, then double-click UPDATE_GALLERY.bat.

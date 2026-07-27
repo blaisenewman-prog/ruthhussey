@@ -1,77 +1,26 @@
-# Ruth Hussey Artist Website
+# Ruth Hussey artist website
 
-A responsive, static portfolio designed for GitHub Pages. No framework, database or paid hosting is required.
+This version has four pages:
 
-## 1. Add the paintings
+- Home — one large painting beside the artist statement
+- Large Works — selected large paintings
+- Small Works — selected small paintings
+- Contact — location, email and Instagram
 
-1. Open the downloaded website folder.
-2. Copy all suitable artwork images from `C:\Mom Pictures` into:
+## Adding paintings
 
-   `images/paintings/`
+No code needs to be edited.
 
-3. JPG, PNG, WebP and AVIF are best for the web. HEIC files should be converted to JPG or WebP because browser support is inconsistent.
-4. Use descriptive filenames where possible, for example:
+1. Put the homepage painting in `images/home`.
+2. Put large paintings in `images/large-works`.
+3. Put small paintings in `images/small-works`.
+4. Double-click `UPDATE_GALLERY.bat`.
+5. Upload the updated files to GitHub.
 
-   `summer-nasturtiums.jpg`
+Only the first picture in `images/home` is used on the homepage. Paintings are ordered alphabetically by filename. Adding numbers to the start of filenames gives exact control, for example `01.jpg`, `02.jpg`, `03.jpg`.
 
-   The filename becomes the displayed title: **Summer Nasturtiums**.
+The older `images/paintings` folder is still supported. Until paintings are sorted into the new folders, those older pictures will appear under Large Works and the first one will appear on the homepage.
 
-## 2. Build the gallery automatically
+## GitHub Pages
 
-Open Command Prompt or PowerShell inside this website folder and run:
-
-```bash
-python build_gallery.py
-```
-
-This scans `images/paintings/` and rewrites `artworks.js`. Once real paintings are present, the six coloured placeholder images are ignored automatically.
-
-You may then open `artworks.js` in Notepad or VS Code to edit titles, categories, media and dates. Example:
-
-```js
-{
-  src: "images/paintings/summer-nasturtiums.jpg",
-  title: "Summer Nasturtiums",
-  category: "Flowers",
-  medium: "Watercolour & ink on Arches paper",
-  year: "2026"
-}
-```
-
-Suggested categories are `Flowers`, `Figures` and `Animals`. New category names automatically become filter buttons.
-
-## 3. Preview the website
-
-Double-clicking `index.html` should work. A local server gives a more accurate preview:
-
-```bash
-python -m http.server 8000
-```
-
-Then visit `http://localhost:8000` in a browser.
-
-## 4. Edit contact details
-
-Open `site-config.js`. The name, email and Instagram account are controlled there.
-
-## 5. Publish on GitHub Pages
-
-1. Create a new public GitHub repository, for example `ruth-hussey-art`.
-2. Upload everything inside this folder to the repository root. `index.html` must be visible at the top level.
-3. In the repository, open **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Select the `main` branch and the `/ (root)` folder, then save.
-6. GitHub will show the live website address after deployment.
-
-## Optional custom domain
-
-A custom domain such as `ruthhussey.ie` can be connected under **Settings → Pages → Custom domain**. The domain provider will also need the DNS records shown by GitHub.
-
-## Image recommendations
-
-- Export paintings at roughly 1800–2500 px on the longest edge.
-- Use an image quality around 80–88% for JPG/WebP.
-- Keep each file below about 2 MB where possible.
-- Photograph paintings straight-on, in even daylight, and crop away the wall or frame unless it is part of the presentation.
-- Add a meaningful `alt` field in `artworks.js` for accessibility, for example: `alt: "Loose pink and orange flowers in a blue vase"`.
-"# ruthhussey" 
+Upload the contents of this folder to the top level of the repository. `index.html` must be visible at the top level. In GitHub, open **Settings → Pages**, select **Deploy from a branch**, choose **main** and **/(root)**, then save.

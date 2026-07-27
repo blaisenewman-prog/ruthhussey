@@ -4,38 +4,38 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Ruth Hussey is a Dublin-based artist working in watercolour and ink.">
-  <meta name="theme-color" content="#f8f7f4">
+  <meta name="theme-color" content="#fbfaf8">
   <title>Ruth Hussey — Artist</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
   <script src="site-config.js" defer></script>
+  <script src="gallery-data.js" defer></script>
   <script src="artworks.js" defer></script>
   <script src="script.js" defer></script>
 </head>
-<body>
-  <a class="skip-link" href="#work">Skip to work</a>
+<body data-page="home">
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
-  <header class="site-header" id="top">
-    <a class="artist-name" href="#top" data-site-name>Ruth Hussey</a>
+  <header class="site-header">
+    <a class="artist-name" href="index.html" data-site-name>Ruth Hussey</a>
     <nav aria-label="Main navigation">
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+      <a href="index.html" data-nav="home">Home</a>
+      <a href="large-works.html" data-nav="large">Large Works</a>
+      <a href="small-works.html" data-nav="small">Small Works</a>
+      <a href="contact.html" data-nav="contact">Contact</a>
     </nav>
   </header>
 
-  <main>
-    <section class="work" id="work" aria-label="Selected work">
-      <div class="gallery" id="gallery"></div>
-    </section>
+  <main id="main-content" class="home-main">
+    <section class="home-layout" aria-labelledby="statement-title">
+      <figure class="home-artwork">
+        <img id="home-image" src="" alt="Artwork by Ruth Hussey" hidden>
+      </figure>
 
-    <section class="about" id="about" aria-labelledby="about-title">
-      <div class="section-label">
-        <h1 id="about-title">About</h1>
-      </div>
+      <article class="artist-statement">
+        <h1 id="statement-title">Artist statement</h1>
 
-      <div class="statement">
-        <p class="statement-opening">I am an artist and yoga teacher based in Dublin.</p>
+        <p>I am an artist and yoga teacher based in Dublin.</p>
 
         <p>My inspiration comes from the flowers I always have in the house, the flora and fauna around me, and the botanic gardens I visit.</p>
 
@@ -47,42 +47,24 @@
 
         <p>A woman floating from a genie’s lamp or turning a cartwheel might express a mood, a memory or a physical experience.</p>
 
-        <blockquote>Letting go of attachment to an outcome is part of the practice—on and off the mat.</blockquote>
-
         <p>As a yoga teacher, I spend a considerable amount of time upside down, which is useful for shifting perspective. The sensations and freedom of yoga are another source of inspiration. I often practise before approaching the blank page with a dripping brush, allowing the body and mind to become more open and responsive.</p>
+
+        <blockquote>Letting go of attachment to an outcome is part of the practice—on and off the mat.</blockquote>
 
         <p>Some images begin with a thought, an idea or a visual prompt drawn from the constant stream of imagery arriving through our screens. Rather than overthinking it, I respond spontaneously and allow the work to evolve through its own process.</p>
 
         <p>Artists including Françoise Pétrovitch, Marlene Dumas, Cy Twombly, Claudia Lowry, Emil Nolde and David Hockney are important influences. The growing interest in works on paper—seen at fairs such as Drawing Now in Paris and Art on Paper in Brussels—has also encouraged me to work with greater looseness and freedom.</p>
 
-        <div class="education">
-          <h2>Education</h2>
+        <section class="education" aria-labelledby="education-title">
+          <h2 id="education-title">Education</h2>
           <p>National College of Art and Design (NCAD)<br>BA (Hons) Fine Art</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact" id="contact" aria-labelledby="contact-title">
-      <h2 id="contact-title">Contact</h2>
-      <div class="contact-links">
-        <a data-email-link href="mailto:Ruthhussey@gmail.com">Ruthhussey@gmail.com</a>
-        <a data-instagram-link href="https://www.instagram.com/ruthiehussey/" target="_blank" rel="noreferrer">Instagram</a>
-      </div>
+        </section>
+      </article>
     </section>
   </main>
 
   <footer class="site-footer">
     <p>© <span id="current-year"></span> <span data-site-name>Ruth Hussey</span></p>
-    <a href="#top">Top</a>
   </footer>
-
-  <dialog class="lightbox" id="lightbox" aria-label="Artwork viewer">
-    <button class="lightbox-close" type="button" aria-label="Close artwork">Close</button>
-    <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous artwork">←</button>
-    <img id="lightbox-image" src="" alt="">
-    <button class="lightbox-nav lightbox-next" type="button" aria-label="Next artwork">→</button>
-  </dialog>
-
-  <noscript>The artwork gallery requires JavaScript.</noscript>
 </body>
 </html>

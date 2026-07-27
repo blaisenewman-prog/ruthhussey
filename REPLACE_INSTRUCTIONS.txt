@@ -1,0 +1,5 @@
+Upload all of these files and folders into the existing GitHub repository.
+
+Important: keep your existing images folder and your existing artworks.js file. This package does not contain artworks.js, so it will not overwrite your current painting list. The new site uses it as a fallback until the paintings are sorted into the new folders.
+
+After sorting paintings into images/home, images/large-works and images/small-works, double-click UPDATE_GALLERY.bat and upload gallery-data.js to GitHub.
